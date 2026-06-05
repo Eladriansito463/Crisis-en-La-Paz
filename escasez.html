@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escasez</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <nav><a href="index.html">← [VOLVER AL NÚCLEO]</a></nav>
+        <h1>Módulo: Rumor de Escasez y Pánico</h1>
+    </header>
+    <main class="contenedor-simulador">
+        
+        <section class="contexto">
+            <h3>>> Contexto del Problema</h3>
+            <p>La desinformación y los rumores generan un comportamiento de "compras por pánico". Este modelo matemático proyecta cómo un aumento repentino y artificial en la demanda puede agotar rápidamente un inventario que, en condiciones normales, sería suficiente.</p>
+        </section>
+
+        <section class="formulario">
+            <h3>>> Parámetros de Entrada</h3>
+            <label>Demanda normal (unidades): <input type="number" id="e-demanda" required></label>
+            <label>Aumento por rumor (%): <input type="number" id="e-porcentaje" required></label>
+            <label>Stock disponible (unidades): <input type="number" id="e-stock" required></label>
+            <button class="btn" onclick="calcularEscasez()">Ejecutar Simulación</button>
+            <button class="btn btn-limpiar" onclick="limpiarDOM('resultado-escasez')">Limpiar</button>
+        </section>
+        
+        <section class="resultados" id="resultado-escasez">
+            <h3>>> Salida de Datos</h3>
+            <p>Esperando parámetros...</p>
+        </section>
+
+        <section class="casos-estudio">
+            <h3>>> Casos de estudio para probar</h3>
+            <ul>
+                <li><strong>Prueba 5:</strong> Demanda normal: 100 | Aumento: 40% | Stock: 120.</li>
+            </ul>
+        </section>
+
+        <section class="conclusiones">
+            <h3>>> Conclusiones del Modelo</h3>
+            <p>El pánico crea profecías autocumplidas. Aunque haya stock suficiente para el consumo habitual, el acaparamiento provocado por rumores genera la escasez real que la gente temía inicialmente, afectando a quienes no tienen recursos para sobreabastecerse.</p>
+        </section>
+
+    </main>
+    <footer><p>Adrian Mamani Mamani // 06/06/2026</p></footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

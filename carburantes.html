@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carburantes</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <nav><a href="index.html">← [VOLVER AL NÚCLEO]</a></nav>
+        <h1>Módulo: Abastecimiento de Carburantes</h1>
+    </header>
+    <main class="contenedor-simulador">
+        
+        <section class="contexto">
+            <h3>>> Contexto del Problema</h3>
+            <p>En situaciones de rumores o escasez real, las estaciones de servicio experimentan una demanda inusual. Este modelo matemático sencillo simula cómo una reserva inicial de combustible se agota a lo largo de los días, considerando el consumo elevado y las cisternas de reabastecimiento que logran llegar.</p>
+        </section>
+
+        <section class="formulario">
+            <h3>>> Parámetros de Entrada</h3>
+            <label>Reserva inicial (litros): <input type="number" id="c-inicial" required></label>
+            <label>Consumo diario (litros): <input type="number" id="c-consumo" required></label>
+            <label>Reabastecimiento diario (litros): <input type="number" id="c-reabastecimiento" required></label>
+            <label>Nivel crítico (litros): <input type="number" id="c-critico" required></label>
+            <button class="btn" onclick="calcularCarburantes()">Ejecutar Simulación</button>
+            <button class="btn btn-limpiar" onclick="limpiarDOM('resultado-carburantes')">Limpiar</button>
+        </section>
+        
+        <section class="resultados" id="resultado-carburantes">
+            <h3>>> Salida de Datos</h3>
+            <p>Esperando parámetros...</p>
+        </section>
+
+        <section class="casos-estudio">
+            <h3>>> Casos de estudio para probar</h3>
+            <ul>
+                <li><strong>Prueba 1:</strong> Reserva 10000 | Consumo 1200 | Reabastecimiento 300 | Crítico 2000</li>
+            </ul>
+        </section>
+
+        <section class="conclusiones">
+            <h3>>> Conclusiones del Modelo</h3>
+            <p>Este simulador demuestra que incluso con reabastecimientos diarios, si el consumo (a menudo impulsado por compras de pánico) supera el ingreso de carburante, el sistema colapsa rápidamente. Ayuda a visualizar la importancia de mantener un consumo racional para evitar llegar al nivel crítico.</p>
+        </section>
+
+    </main>
+    <footer><p>Adrian Mamani Mamani // 06/06/2026</p></footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

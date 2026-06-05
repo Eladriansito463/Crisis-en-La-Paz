@@ -1,0 +1,411 @@
+:root {
+    --fondo: #0a0a0c;
+    --texto: #e0e0e0;
+    --neon-primario: #00f3ff; /* Cian neón */
+    --neon-secundario: #ff00ff; /* Magenta neón */
+    --neon-alerta: #ff2a2a; /* Rojo neón */
+    --neon-exito: #39ff14; /* Verde neón */
+    --panel-bg: rgba(10, 20, 30, 0.7);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+    background-image: radial-gradient(circle at 50% 50%, #111 0%, #000 100%);
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    border-bottom: 2px solid var(--neon-primario);
+    box-shadow: 0 0 15px var(--neon-primario);
+    margin-bottom: 2rem;
+    background: linear-gradient(180deg, rgba(0, 243, 255, 0.1) 0%, transparent 100%);
+}
+
+h1, h2, h3 {
+    color: #fff;
+    text-shadow: 0 0 5px var(--neon-primario), 0 0 10px var(--neon-primario);
+    margin-bottom: 1rem;
+}
+
+header nav a {
+    color: var(--neon-secundario);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 5px var(--neon-secundario);
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px var(--neon-secundario);
+}
+
+/* Tarjetas del Menú Principal */
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.tarjeta {
+    background: var(--panel-bg);
+    padding: 2rem;
+    border: 1px solid var(--neon-primario);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+    max-width: 320px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.tarjeta:hover {
+    box-shadow: 0 0 20px var(--neon-primario), inset 0 0 10px var(--neon-primario);
+    transform: translateY(-5px);
+}
+
+/* Botones Neón */
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--neon-primario);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border: 2px solid var(--neon-primario);
+    border-radius: 4px;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    box-shadow: 0 0 5px var(--neon-primario), inset 0 0 5px var(--neon-primario);
+}
+
+.btn:hover { 
+    background-color: var(--neon-primario); 
+    color: var(--fondo);
+    box-shadow: 0 0 20px var(--neon-primario), inset 0 0 10px #fff;
+}
+
+.btn-limpiar {
+    color: var(--neon-secundario);
+    border-color: var(--neon-secundario);
+    box-shadow: 0 0 5px var(--neon-secundario), inset 0 0 5px var(--neon-secundario);
+}
+
+.btn-limpiar:hover {
+    background-color: var(--neon-secundario);
+    color: var(--fondo);
+    box-shadow: 0 0 20px var(--neon-secundario), inset 0 0 10px #fff;
+}
+
+/* Contenedores del Simulador */
+.contenedor-simulador {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    gap: 2rem;
+}
+
+section {
+    background: var(--panel-bg);
+    padding: 2rem;
+    border: 1px solid #333;
+    border-radius: 8px;
+    border-left: 4px solid var(--neon-primario);
+}
+
+.contexto, .conclusiones {
+    border-left-color: var(--neon-secundario);
+}
+
+label {
+    display: block;
+    margin-bottom: 1rem;
+    color: #aaa;
+}
+
+input {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.3rem;
+    background-color: #111;
+    border: 1px solid #444;
+    color: var(--neon-primario);
+    font-family: inherit;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--neon-primario);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+/* Resultados */
+.resultados {
+    min-height: 150px;
+    border: 1px dashed var(--neon-primario);
+}
+
+.alerta { 
+    color: var(--neon-alerta); 
+    text-shadow: 0 0 8px rgba(255, 42, 42, 0.6);
+}
+
+.exito { 
+    color: var(--neon-exito); 
+    text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    border-top: 1px solid #333;
+    color: #666;
+}
+
+@media (min-width: 768px) {
+    .contenedor-simulador {
+        grid-template-columns: 1fr 1fr;
+    }
+    .contexto, .conclusiones, .casos-estudio {
+        grid-column: 1 / -1;
+    }
+}
+/* --- Efectos Especiales para la Página Principal --- */
+
+/* Línea de escaneo láser que baja por la pantalla */
+.escaner-linea {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 243, 255, 0.2);
+    box-shadow: 0 0 10px var(--neon-primario);
+    animation: escanear 6s linear infinite;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+@keyframes escanear {
+    0% { top: 0%; }
+    50% { top: 100%; }
+    100% { top: 0%; }
+}
+
+.codigo-sistema {
+    font-size: 0.75rem;
+    color: var(--neon-secundario);
+    text-shadow: 0 0 5px var(--neon-secundario);
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.subtitulo-neon {
+    font-size: 0.9rem;
+    color: #cbd5e0;
+    letter-spacing: 3px;
+    text-shadow: 0 0 2px #fff;
+}
+
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.consola-mensaje {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #222;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 2.5rem;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.consola-mensaje .puntero {
+    color: var(--neon-exito);
+    text-shadow: 0 0 5px var(--neon-exito);
+    animation: parpadeo 1s infinite;
+}
+
+@keyframes parpadeo {
+    50% { opacity: 0; }
+}
+
+/* Rediseño de las Tarjetas para el Menú */
+.tarjeta-tag {
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    text-align: right;
+    opacity: 0.6;
+}
+
+/* Variaciones de Color Neón para cada Tarjeta */
+.tarjeta-cian {
+    border: 1px solid var(--neon-primario);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
+}
+.tarjeta-cian h2 { text-shadow: 0 0 8px var(--neon-primario); }
+.tarjeta-cian:hover {
+    box-shadow: 0 0 20px var(--neon-primario), inset 0 0 8px rgba(0, 243, 255, 0.2);
+}
+
+.tarjeta-magenta {
+    border: 1px solid var(--neon-secundario);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.1);
+}
+.tarjeta-magenta h2 { text-shadow: 0 0 8px var(--neon-secundario); color: #fff; }
+.tarjeta-magenta:hover {
+    box-shadow: 0 0 20px var(--neon-secundario), inset 0 0 8px rgba(255, 0, 255, 0.2);
+}
+
+.tarjeta-verde {
+    border: 1px solid var(--neon-exito);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.1);
+}
+.tarjeta-verde h2 { text-shadow: 0 0 8px var(--neon-exito); }
+.tarjeta-verde:hover {
+    box-shadow: 0 0 20px var(--neon-exito), inset 0 0 8px rgba(57, 255, 20, 0.2);
+}
+
+/* Botones específicos por color */
+.btn-cian { color: var(--neon-primario); border-color: var(--neon-primario); box-shadow: 0 0 5px var(--neon-primario); }
+.btn-cian:hover { background: var(--neon-primario); color: #000; }
+
+.btn-magenta { color: var(--neon-secundario); border-color: var(--neon-secundario); box-shadow: 0 0 5px var(--neon-secundario); }
+.btn-magenta:hover { background: var(--neon-secundario); color: #000; }
+
+.btn-verde { color: var(--neon-exito); border-color: var(--neon-exito); box-shadow: 0 0 5px var(--neon-exito); }
+.btn-verde:hover { background: var(--neon-exito); color: #000; }
+
+/* Footer de la página de inicio */
+.footer-principal {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-top: 4rem;
+    border-top: 2px solid var(--neon-secundario);
+    box-shadow: 0 -5px 15px rgba(255, 0, 255, 0.1);
+    background: linear-gradient(0deg, rgba(255, 0, 255, 0.05) 0%, transparent 100%);
+}
+
+.footer-principal p {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: #a0aec0;
+}
+
+.footer-principal .copyright {
+    margin-top: 0.5rem;
+    color: #4a5568;
+    font-size: 0.7rem;
+}
+/* --- Estilos para los Nuevos Paneles (Situación y Calma) --- */
+
+.panel-informativo {
+    background: var(--panel-bg);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* Panel Superior: Reporte de Situación */
+.situacion-actual {
+    border-left: 4px solid var(--neon-primario);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.situacion-actual h2 {
+    color: var(--neon-primario);
+    font-size: 1.5rem;
+}
+
+.imagen-situacion img {
+    width: 100%;
+    max-width: 500px;
+    border: 2px dashed var(--neon-secundario);
+    border-radius: 4px;
+    padding: 0.5rem;
+    display: block;
+    margin: 0 auto;
+    opacity: 0.7;
+    transition: 0.4s ease-in-out;
+    filter: grayscale(80%) contrast(1.2); /* Le da un toque más oscuro/documental */
+}
+
+.imagen-situacion img:hover {
+    opacity: 1;
+    border-style: solid;
+    box-shadow: 0 0 20px var(--neon-secundario);
+    filter: grayscale(0%) contrast(1);
+}
+
+.pie-foto {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--neon-secundario);
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+}
+
+/* Panel Inferior: Mensaje de Calma */
+.mensaje-calma {
+    border-left: 4px solid var(--neon-exito);
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.mensaje-calma h2 {
+    color: var(--neon-exito);
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+.mensaje-calma strong {
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.mensaje-calma p {
+    color: #cbd5e0;
+}
+
+/* Hacer que el panel de situación se ponga lado a lado en pantallas grandes */
+@media (min-width: 900px) {
+    .situacion-actual {
+        flex-direction: row;
+        align-items: center;
+    }
+    .texto-situacion {
+        flex: 1;
+        padding-right: 2rem;
+    }
+    .imagen-situacion {
+        flex: 1;
+    }
+}

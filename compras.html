@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <nav><a href="index.html">← [VOLVER AL NÚCLEO]</a></nav>
+        <h1>Módulo: Presupuesto de Compras Familiares</h1>
+    </header>
+    <main class="contenedor-simulador">
+        
+        <section class="contexto">
+            <h3>>> Contexto del Problema</h3>
+            <p>Frente a la incertidumbre económica, las familias deben ajustar sus presupuestos limitados para adquirir alimentos básicos. Este módulo automatiza la verificación de solvencia, calculando si los fondos disponibles cubren la lista de compras planificada o si se requiere endeudamiento.</p>
+        </section>
+
+        <section class="formulario">
+            <h3>>> Parámetros de Entrada</h3>
+            <label>Presupuesto familiar disponible (Bs): <input type="number" id="d-presupuesto" required></label>
+            <label>Costo promedio por producto (Bs): <input type="number" id="d-precio" required></label>
+            <label>Cantidad total de artículos a comprar: <input type="number" id="d-cantidad" required></label>
+            <button class="btn" onclick="calcularCompras()">Ejecutar Simulación</button>
+            <button class="btn btn-limpiar" onclick="limpiarDOM('resultado-compras')">Limpiar</button>
+        </section>
+        
+        <section class="resultados" id="resultado-compras">
+            <h3>>> Salida de Datos</h3>
+            <p>Esperando parámetros...</p>
+        </section>
+
+        <section class="casos-estudio">
+            <h3>>> Casos de estudio para probar</h3>
+            <ul>
+                <li><strong>Prueba 4:</strong> Presupuesto 500 Bs | Total estimado de compra 580 Bs (Ej: 58 artículos a 10 Bs).</li>
+            </ul>
+        </section>
+
+        <section class="conclusiones">
+            <h3>>> Conclusiones del Modelo</h3>
+            <p>El déficit presupuestario mensual obliga a las familias a tomar decisiones críticas: reducir la cantidad de alimentos, buscar alternativas de menor calidad o recurrir a préstamos. Este modelo evidencia la fragilidad financiera ante precios inestables.</p>
+        </section>
+
+    </main>
+    <footer><p>Adrian Mamani Mamani // 06/06/2026</p></footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporte</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <nav><a href="index.html">← [VOLVER AL NÚCLEO]</a></nav>
+        <h1>Módulo: Costo de Transporte</h1>
+    </header>
+    <main class="contenedor-simulador">
+        
+        <section class="contexto">
+            <h3>>> Contexto del Problema</h3>
+            <p>Los bloqueos o conflictos sociales obligan al transporte público y privado a tomar rutas alternativas. Estos desvíos incrementan la distancia recorrida y, en consecuencia, el pasaje o el costo de combustible. Aquí calculamos ese impacto económico semanal.</p>
+        </section>
+
+        <section class="formulario">
+            <h3>>> Parámetros de Entrada</h3>
+            <label>Distancia normal (km): <input type="number" id="t-dist-normal" required></label>
+            <label>Distancia con desvío (km): <input type="number" id="t-dist-desvio" required></label>
+            <label>Costo por km (Bs): <input type="number" id="t-costo-km" required></label>
+            <label>Viajes por semana: <input type="number" id="t-viajes" required></label>
+            <button class="btn" onclick="calcularTransporte()">Ejecutar Simulación</button>
+            <button class="btn btn-limpiar" onclick="limpiarDOM('resultado-transporte')">Limpiar</button>
+        </section>
+        
+        <section class="resultados" id="resultado-transporte">
+            <h3>>> Salida de Datos</h3>
+            <p>Esperando parámetros...</p>
+        </section>
+
+        <section class="casos-estudio">
+            <h3>>> Casos de estudio para probar</h3>
+            <ul>
+                <li><strong>Prueba 1:</strong> Normal: 10 km | Desvío: 16 km | Costo: 2 Bs/km | Viajes: 5</li>
+            </ul>
+        </section>
+
+        <section class="conclusiones">
+            <h3>>> Conclusiones del Modelo</h3>
+            <p>El simulador demuestra que los conflictos viales tienen un costo directo e inmediato en el bolsillo del ciudadano. Este gasto extra semanal representa un dinero que deja de invertirse en la canasta familiar, agravando la situación económica de los hogares.</p>
+        </section>
+
+    </main>
+    <footer><p>Adrian Mamani Mamani // 06/06/2026</p></footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

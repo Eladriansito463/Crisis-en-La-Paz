@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alimentos</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <nav><a href="index.html">← [VOLVER AL NÚCLEO]</a></nav>
+        <h1>Módulo: Precios de Alimentos</h1>
+    </header>
+    <main class="contenedor-simulador">
+        
+        <section class="contexto">
+            <h3>>> Contexto del Problema</h3>
+            <p>La inflación y la especulación generan un aumento en los precios de la canasta básica. Este módulo permite a una familia ingresar el precio histórico y el precio actual de un producto para descubrir exactamente cuánto poder adquisitivo están perdiendo mensualmente.</p>
+        </section>
+
+        <section class="formulario">
+            <h3>>> Parámetros de Entrada</h3>
+            <label>Producto: <input type="text" id="a-producto" placeholder="Ej. Arroz" required></label>
+            <label>Precio Anterior (Bs): <input type="number" id="a-precio-ant" required></label>
+            <label>Precio Actual (Bs): <input type="number" id="a-precio-act" required></label>
+            <label>Cantidad de compra usual (Unidades): <input type="number" id="a-cantidad" required></label>
+            <button class="btn" onclick="calcularAlimentos()">Ejecutar Simulación</button>
+            <button class="btn btn-limpiar" onclick="limpiarDOM('resultado-alimentos')">Limpiar</button>
+        </section>
+        
+        <section class="resultados" id="resultado-alimentos">
+            <h3>>> Salida de Datos</h3>
+            <p>Esperando parámetros...</p>
+        </section>
+
+        <section class="casos-estudio">
+            <h3>>> Casos de estudio para probar</h3>
+            <ul>
+                <li><strong>Prueba 1:</strong> Arroz | Anterior: 8 Bs | Actual: 11 Bs | 10 unidades mensuales</li>
+            </ul>
+        </section>
+
+        <section class="conclusiones">
+            <h3>>> Conclusiones del Modelo</h3>
+            <p>La simulación visibiliza el efecto "invisible" de la inflación. Aumentos que parecen pequeños (como 3 Bs) se convierten en mermas significativas del presupuesto cuando se multiplican por el consumo mensual, forzando a las familias a recortar gastos en otras áreas esenciales.</p>
+        </section>
+
+    </main>
+    <footer><p>Adrian Mamani Mamani // 06/06/2026</p></footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
